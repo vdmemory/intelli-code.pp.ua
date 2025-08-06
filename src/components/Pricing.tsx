@@ -2,8 +2,10 @@ import React from 'react'
 import { Button } from '@/components/ui/button'
 import { useInView } from 'react-intersection-observer'
 import { easeInOut, motion } from 'framer-motion'
+import { useLanguage } from '@/hooks/useLanguage.tsx'
 
 const Pricing = () => {
+    const { t } = useLanguage()
 
     const { ref, inView } = useInView({
         triggerOnce: true,
@@ -73,59 +75,64 @@ const Pricing = () => {
 
     const plans = [
         {
-            name: 'Starter',
-            price: 'Free',
-            description:
-                'Perfect for small businesses starting their fintech journey',
+            name: t('pricing.starter.name'),
+            price: t('pricing.starter.price'),
+            description: t('pricing.starter.description'),
             features: [
-                'Up to 100 transactions/month',
-                'Basic payment processing',
-                'Standard reporting',
-                'Email support',
-                'Basic fraud protection',
+                t('pricing.starter.feature1'),
+                t('pricing.starter.feature2'),
+                t('pricing.starter.feature3'),
+                t('pricing.starter.feature4'),
+                t('pricing.starter.feature5'),
             ],
-            buttonText: 'Get Started',
+            buttonText: t('pricing.starter.button'),
             buttonVariant: 'outline',
             popular: false,
         },
         {
-            name: 'Professional',
-            price: '$99',
-            period: 'per month',
-            description:
-                'Ideal for growing businesses with higher transaction volumes',
+            name: t('pricing.professional.name'),
+            price: t('pricing.professional.price'),
+            period: t('pricing.professional.period'),
+            description: t('pricing.professional.description'),
             features: [
-                'Up to 10,000 transactions/month',
-                'Advanced payment processing',
-                'Real-time analytics',
-                'Multi-currency support',
-                'Advanced fraud protection',
-                'API access',
-                'Priority support',
+                t('pricing.professional.feature1'),
+                t('pricing.professional.feature2'),
+                t('pricing.professional.feature3'),
+                t('pricing.professional.feature4'),
+                t('pricing.professional.feature5'),
+                t('pricing.professional.feature6'),
+                t('pricing.professional.feature7'),
             ],
-            buttonText: 'Start 14-day trial',
+            buttonText: t('pricing.professional.button'),
             buttonVariant: 'default',
             popular: true,
         },
         {
-            name: 'Enterprise',
-            price: 'Custom',
-            description:
-                'For large organizations with complex financial operations',
+            name: t('pricing.enterprise.name'),
+            price: t('pricing.enterprise.price'),
+            description: t('pricing.enterprise.description'),
             features: [
-                'Unlimited transactions',
-                'Custom payment workflows',
-                'Advanced compliance tools',
-                'Dedicated infrastructure',
-                'White-label solutions',
-                'Dedicated account manager',
-                '24/7 premium support',
+                t('pricing.enterprise.feature1'),
+                t('pricing.enterprise.feature2'),
+                t('pricing.enterprise.feature3'),
+                t('pricing.enterprise.feature4'),
+                t('pricing.enterprise.feature5'),
+                t('pricing.enterprise.feature6'),
+                t('pricing.enterprise.feature7'),
             ],
-            buttonText: 'Contact Sales',
+            buttonText: t('pricing.enterprise.button'),
             buttonVariant: 'outline',
             popular: false,
         },
     ]
+
+    const handleNavClick = (page: string) => (e: React.MouseEvent) => {
+        e.preventDefault()
+        const element = document.getElementById(page)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 
     return (
         <section
@@ -144,14 +151,13 @@ const Pricing = () => {
                         className="text-2xl md:text-3xl font-bold tracking-tighter text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
                         variants={titleVariants}
                     >
-                        Transparent pricing for every stage
+                        {t('pricing.title')}
                     </motion.h2>
                     <motion.p
                         className="text-muted-foreground text-lg"
                         variants={itemVariants}
                     >
-                        Scale your financial operations with plans that grow
-                        with your business
+                        {t('pricing.description')}
                     </motion.p>
                 </motion.div>
 
@@ -178,7 +184,7 @@ const Pricing = () => {
                         >
                             {plan.popular && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-sm rounded-full font-medium">
-                                    Most Popular
+                                    {t('pricing.popular')}
                                 </div>
                             )}
 
@@ -243,34 +249,16 @@ const Pricing = () => {
                                 </div>
                             </div>
 
-                            <motion.div
-                                className="mt-6"
-                                variants={itemVariants}
-                            >
-                                <Button
-                                    className={
-                                        plan.buttonVariant === 'default'
-                                            ? 'w-full bg-primary text-primary-foreground hover:bg-primary/90'
-                                            : 'w-full border-border text-foreground hover:bg-muted'
-                                    }
-                                    variant={
-                                        plan.buttonVariant as
-                                            | 'default'
-                                            | 'outline'
-                                    }
-                                >
-                                    {plan.buttonText}
-                                </Button>
-                            </motion.div>
+
                         </motion.div>
                     ))}
                 </motion.div>
 
 
                 <div className="text-center text-muted-foreground">
-                    Have questions?{' '}
-                    <a href="#" className="text-primary hover:underline">
-                        Contact our sales team
+                    {t('pricing.questions')}{' '}
+                    <a onClick={handleNavClick('contacts')} className="text-primary hover:underline cursor-pointer">
+                        {t('pricing.contact_team')}
                     </a>
                 </div>
             </div>

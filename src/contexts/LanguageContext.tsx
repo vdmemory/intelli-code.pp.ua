@@ -24,42 +24,51 @@ const translations = {
         // Hero Section
         'hero.badge': 'Професійні IT рішення',
         'hero.title': 'Розробка',
-        'hero.title.highlight': 'Програмного Забезпечення',
+        'hero.title.highlight': 'програмного забезпечення',
+        'hero.title2': 'для сучасного бізнесу',
         'hero.description':
             'Комплексні IT послуги: розробка веб-додатків, мобільних додатків, системи безпеки та інформаційні технології для вашого бізнесу.',
         'hero.contact': "Зв'яжіться з нами",
         'hero.services': 'Наші послуги',
 
-        // Services Section
-        'services.title': 'Наші послуги',
-        'services.description':
-            'Професійні IT рішення та експертні технології для розвитку вашого бізнесу',
-        'services.web.title': 'Веб-розробка',
-        'services.web.description':
-            'Створення сучасних веб-додатків та сайтів з використанням передових технологій. Від корпоративних порталів до інтернет-магазинів.',
-        'services.mobile.title': 'Мобільна розробка',
-        'services.mobile.description':
-            'Розробка нативних та кросплатформних мобільних додатків для iOS та Android з сучасним UX/UI дизайном.',
-        'services.security.title': 'Інформаційна безпека',
-        'services.security.description':
-            'Комплексні рішення з захисту інформації, аудит безпеки, впровадження систем захисту даних та відповідність стандартам безпеки.',
-        'services.technologies': 'Технології:',
-        'services.included': 'Що включено:',
-        'services.additional.title': 'Додаткові послуги',
-        'services.additional.description':
-            'Спеціалізовані технології та послуги для розвитку вашого IT проекту',
-        'services.database': 'Бази даних',
-        'services.database.desc': 'Проектування та оптимізація баз даних.',
-        'services.cloud': 'Хмарні рішення',
-        'services.cloud.desc': 'Міграція та розгортання в хмарі.',
-        'services.devops': 'DevOps',
-        'services.devops.desc': 'Автоматизація розгортання та моніторинг.',
-        'services.support': 'Технічна підтримка',
-        'services.support.desc': 'Цілодобова підтримка ваших IT систем.',
-        'services.design': 'UI/UX Дизайн',
-        'services.design.desc': 'Сучасний дизайн користувацьких інтерфейсів.',
-        'services.blockchain': 'Блокчейн',
-        'services.blockchain.desc': 'Розробка децентралізованих додатків.',
+        // Pricing Section
+        'pricing.title': 'Прозорі ціни для будь-якого проекту',
+        'pricing.description': 'Оберіть підходящий пакет послуг для розвитку вашого бізнесу',
+        'pricing.popular': 'Найпопулярніший',
+        'pricing.questions': 'Є питання?',
+        'pricing.contact_team': "Зв'яжіться з нашою командою",
+        'pricing.starter.name': 'Стартовий',
+        'pricing.starter.price': 'Від 50,000₴',
+        'pricing.starter.description': 'Ідеально для малого бізнесу та стартапів',
+        'pricing.starter.feature1': 'Лендінг або простий сайт',
+        'pricing.starter.feature2': 'Адаптивний дизайн',
+        'pricing.starter.feature3': 'Базова SEO-оптимізація',
+        'pricing.starter.feature4': 'Техпідтримка 3 місяці',
+        'pricing.starter.feature5': 'Хостинг на 1 рік',
+        'pricing.starter.button': 'Замовити',
+        'pricing.professional.name': 'Професійний',
+        'pricing.professional.price': 'Від 150,000₴',
+        'pricing.professional.period': 'за проект',
+        'pricing.professional.description': 'Для зростаючих компаній з розширеними потребами',
+        'pricing.professional.feature1': 'Веб-додаток або інтернет-магазин',
+        'pricing.professional.feature2': 'Панель адміністратора',
+        'pricing.professional.feature3': 'Інтеграція з API',
+        'pricing.professional.feature4': 'Система аналітики',
+        'pricing.professional.feature5': 'Мобільна версія',
+        'pricing.professional.feature6': 'Техпідтримка 6 місяців',
+        'pricing.professional.feature7': 'Пріоритетна підтримка',
+        'pricing.professional.button': 'Обговорити проект',
+        'pricing.enterprise.name': 'Корпоративний',
+        'pricing.enterprise.price': 'Індивідуально',
+        'pricing.enterprise.description': 'Для великих організацій зі складними вимогами',
+        'pricing.enterprise.feature1': 'Корпоративні системи',
+        'pricing.enterprise.feature2': 'Інтеграція з існуючими системами',
+        'pricing.enterprise.feature3': 'Високі вимоги безпеки',
+        'pricing.enterprise.feature4': 'Виділена інфраструктура',
+        'pricing.enterprise.feature5': 'Індивідуальні рішення',
+        'pricing.enterprise.feature6': 'Персональний менеджер',
+        'pricing.enterprise.feature7': 'Підтримка 24/7',
+        'pricing.enterprise.button': "Зв'язатися з нами",
 
         // Blog Section
         'blog.title': 'Блог та статті',
@@ -75,16 +84,38 @@ const translations = {
         'testimonials.title': 'Відгуки наших клієнтів',
         'testimonials.description':
             'Дізнайтеся, що кажуть наші задоволені клієнти про співпрацю з нами',
+        'testimonials.message.first':
+            'Ефективність нашої платформи обробки платежів зросла на 40%, а кількість помилок транзакцій зменшилася до нуля. Автоматизація процесів змінила правила гри.',
+        'testimonials.message.second':
+            'Аналітика в реальному часі та можливості виявлення шахрайства допомогли нам заощадити мільйони. Ми можемо виявляти проблеми до того, як вони стануть серйозними.',
+        'testimonials.message.third':
+            'Раніше відповідність вимогам була справжнім кошмаром. Тепер наші звіти для регуляторів автоматизовані, і ми завжди готові до аудиту.',
+
 
         // FAQ Section
         'faq.title': 'Часто задавані питання',
         'faq.description':
             'Популярні питання про наші послуги та процес розробки',
 
+        // Brand Section
+        'brand.title': 'Партнери та технології',
+        'brand.description':
+            'Ми співпрацюємо з провідними технологічними компаніями та використовуємо найкращі рішення для вашого бізнесу.',
+
         // Contact Section
         'contact.title': "Зв'яжіться з нами",
         'contact.description':
             "Заповніть форму нижче, щоб обговорити ваш проект. Наша команда зв'яжеться з вами протягом 24 годин для обговорення деталей.",
+        'contact.subtitle': 'Готові розпочати ваш проект?',
+        'contact.subtitle2': 'Наша команда експертів готова допомогти вам втілити ваші ідеї в життя. Зв\'яжіться з нами сьогодні для безкоштовної консультації.',
+        'contact.form_title': 'Надішліть нам повідомлення',
+        'contact.form_first_name': "Ім'я",
+        'contact.form_last_name': 'Прізвище',
+        'contact.form_email': 'Електронна пошта',
+        'contact.form_phone': 'Номер телефону',
+        'contact.form_message': 'Розкажіть нам про ваш проект...',
+        'contact.form_submit': 'Відправити повідомлення',
+        'contact.address': 'Адреса',
         'contact.name': "Ім'я",
         'contact.email': 'Електронна пошта',
         'contact.phone': 'Телефон',
@@ -107,7 +138,6 @@ const translations = {
         'contact.text.title3': 'Підтримка клієнтів',
         'contact.text.description3':
             'Наша команда підтримки завжди готова допомогти вам з будь-якими питаннями чи проблемами, пов’язаними з вашими IT системами.',
-
         // Footer
         'footer.description':
             'Професійні послуги з розробки програмного забезпечення, інформаційні технології та системи безпеки для вашого бізнесу.',
@@ -117,41 +147,50 @@ const translations = {
         'footer.privacy': 'Політика конфіденційності',
         'footer.terms': 'Умови використання',
 
-        // Blog Section - specific posts
-        'blog.post.web.title': 'Сучасні тенденції веб-розробки 2024',
-        'blog.post.web.excerpt':
-            'Огляд найновіших технологій та фреймворків для створення сучасних веб-додатків, включаючи React 18, Next.js 14 та TypeScript.',
-        'blog.post.web.category': 'Веб-розробка',
-        'blog.post.mobile.title': 'Безпека мобільних додатків',
-        'blog.post.mobile.excerpt':
-            'Найкращі практики забезпечення безпеки мобільних додатків та захисту користувацьких даних.',
-        'blog.post.mobile.category': 'Безпека',
-        'blog.post.cloud.title': 'Хмарні технології для бізнесу',
-        'blog.post.cloud.excerpt':
-            'Як хмарні рішення можуть оптимізувати бізнес-процеси та знизити IT-витрати компанії.',
-        'blog.post.cloud.category': 'Хмарні технології',
-        'blog.post.devops.title': 'DevOps: автоматизація розгортання',
-        'blog.post.devops.excerpt':
-            'Впровадження CI/CD пайплайнів та автоматизація процесів розгортання для підвищення ефективності розробки.',
-        'blog.post.devops.category': 'DevOps',
-        'blog.post.design.title': 'UI/UX дизайн: тренди 2024',
-        'blog.post.design.excerpt':
-            'Сучасні підходи до проектування користувацьких інтерфейсів та створення зручного користувацького досвіду.',
-        'blog.post.design.category': 'Дизайн',
+        'footer.menu1.title': 'Продукт',
+        'footer.menu1.link1': 'Особливості',
+        'footer.menu1.link2': 'Інтеграції',
+        'footer.menu1.link3': 'Ціни',
+        'footer.menu1.link4': 'Оновлення',
+        'footer.menu1.link5': 'Дорожня карта',
+        'footer.menu2.title': 'Компанія',
+        'footer.menu2.link1': 'Головна',
+        'footer.menu2.link2': 'Особливості',
+        'footer.menu2.link3': 'Кар\'єра',
+        'footer.menu2.link4': 'FAQ',
+        'footer.menu2.link5': 'Контакти',
 
         // Featured Section - projects
-        'projects.ecommerce.title': 'E-commerce платформа TechStore',
-        'projects.ecommerce.description':
-            'Повнофункціональна платформа електронної комерції з інтеграцією платіжних систем, системою управління замовленнями та аналітикою.',
-        'projects.ecommerce.category': 'Веб-платформа',
-        'projects.banking.title': 'Мобільний банкінг FinanceApp',
-        'projects.banking.description':
-            'Безпечний мобільний додаток для банківських операцій з біометричною автентифікацією та шифруванням даних.',
-        'projects.banking.category': 'Мобільний додаток',
-        'projects.security.title': 'Корпоративна система безпеки SecureNet',
-        'projects.security.description':
-            'Комплексна система інформаційної безпеки з багатофакторною автентифікацією, моніторингом загроз та захистом від кібератак.',
-        'projects.security.category': 'Система безпеки',
+        'projects1.title': 'Автоматизація платежів',
+        'projects1.description':
+            'Автоматизуйте обробку платежів - зменшення помилок, підвищення ефективності.',
+        'projects1.expandedDescription':
+            'Налаштуйте автоматизовані робочі процеси платежів з користувацькими ланцюгами затвердження. Плануйте регулярні платежі, автоматизуйте обробку рахунків і створюйте умовні правила для різних типів транзакцій. Зменшіть ручне втручання та забезпечте відповідність фінансовим регламентам.',
+        'projects2.title': 'Аналітика в реальному часі',
+        'projects2.description':
+            'Отримуйте інсайти про ваші фінансові операції з аналітикою та звітністю в реальному часі.',
+        'projects2.expandedDescription':
+            'Відстежуйте ключові фінансові показники за допомогою налаштовуваних інформаційних панелей. Моніторьте грошові потоки, обсяги платежів і рівні успішності транзакцій в реальному часі. Генеруйте детальні звіти для зацікавлених сторін і виявляйте тенденції до того, як вони вплинуть на ваш бізнес.',
+        'projects3.title': 'Управління ризиками',
+        'projects3.description':
+            'Розширене виявлення шахрайства та інструменти оцінки ризиків для захисту вашого бізнесу.',
+        'projects3.expandedDescription':
+            'Впроваджуйте алгоритми машинного навчання для виявлення аномалій і потенційного шахрайства в реальному часі. Налаштуйте оцінку ризиків для транзакцій, моніторте шаблони і отримуйте миттєві сповіщення про підозрілу активність. Захистіть свій бізнес за допомогою рішень корпоративного рівня безпеки.',
+        'projects4.title': 'Автоматизація відповідності',
+        'projects4.description':
+            'Автоматизуйте звітність та забезпечте дотримання фінансових регламентів.',
+        'projects4.expandedDescription':
+            'Оптимізуйте ваші процеси відповідності за допомогою інструментів автоматизованої звітності. Генеруйте звіти для регуляторних органів, відстежуйте показники відповідності та підтримуйте аудиторські сліди без зусиль. Забезпечте відповідність вашого бізнесу всім юридичним вимогам без ручних витрат.',
+        'projects5.title': 'Підтримка багатьох валют',
+        'projects5.description':
+            'Підтримка багатьох валют і міжнародних транзакцій для розширення вашого бізнесу.',
+        'projects5.expandedDescription':
+            'Обробляйте платежі в різних валютах з реальними обмінними курсами. Керуйте конверсіями валют, відстежуйте багатовалютні транзакції та забезпечте безперебійну роботу для міжнародних клієнтів. Розширюйте свій бізнес на глобальному рівні з упевненістю.',
+        'projects6.title': 'Інтеграція API',
+        'projects6.description':
+            'Потужні API для безшовної інтеграції з вашими існуючими фінансовими системами.',
+        'projects6.expandedDescription':
+            'Інтегруйте нашу платформу з вашими існуючими ERP, CRM або бухгалтерськими системами за допомогою наших надійних API. Автоматизуйте обмін даними, синхронізуйте транзакції та покращуйте ваші фінансові робочі процеси. Налаштовувані кінцеві точки API для задоволення ваших специфічних потреб.',
 
         // FAQ Section - questions and answers
         'faq.q1.question': 'Скільки часу займає розробка веб-додатку?',
@@ -173,23 +212,7 @@ const translations = {
         'faq.q6.answer':
             'Вартість залежить від складності проекту, функціоналу та термінів. Надаємо безкоштовну консультацію та детальну кошторис після аналізу ваших вимог.',
 
-        // Testimonials Section - specific testimonials
-        'testimonials.client1.name': 'Іван Петров',
-        'testimonials.client1.position': 'Виконавчий директор',
-        'testimonials.client1.company': 'ТехІнновації',
-        'testimonials.client1.testimonial':
-            'Команда Integral Revolut створила відмінну CRM систему для нас. Професійний підхід та якісна технічна підтримка!',
-        'testimonials.client2.name': 'Марія Іванова',
-        'testimonials.client2.position': 'IT Директор',
-        'testimonials.client2.company': 'Креативні Рішення',
-        'testimonials.client2.testimonial':
-            'Мобільний додаток перевершив усі очікування. Сучасний дизайн, швидка продуктивність та відмінна безпека даних.',
-        'testimonials.client3.name': 'Олексій Сидоров',
-        'testimonials.client3.position': 'Проектний менеджер',
-        'testimonials.client3.company': 'Майбутні Технології',
-        'testimonials.client3.testimonial':
-            'Рекомендую для будь-яких IT проектів! Дотримання термінів, прозорість процесу та висока якість коду.',
-    },
+       },
     en: {
         // Navigation
         'nav.home': 'Home',
@@ -202,41 +225,50 @@ const translations = {
         'hero.badge': 'Professional IT Solutions',
         'hero.title': 'Software',
         'hero.title.highlight': 'Development',
+        'hero.title2': 'for Modern Business',
         'hero.description':
             'Comprehensive IT services: web application development, mobile applications, security systems and information technologies for your business.',
         'hero.contact': 'Contact Us',
         'hero.services': 'Our Services',
 
-        // Services Section
-        'services.title': 'Our Services',
-        'services.description':
-            'Professional IT solutions and expert technologies for your business development',
-        'services.web.title': 'Web Development',
-        'services.web.description':
-            'Creating modern web applications and websites using cutting-edge technologies. From corporate portals to online stores.',
-        'services.mobile.title': 'Mobile Development',
-        'services.mobile.description':
-            'Development of native and cross-platform mobile applications for iOS and Android with modern UX/UI design.',
-        'services.security.title': 'Information Security',
-        'services.security.description':
-            'Comprehensive information protection solutions, security audits, implementation of data protection systems and compliance with security standards.',
-        'services.technologies': 'Technologies:',
-        'services.included': "What's included:",
-        'services.additional.title': 'Additional Services',
-        'services.additional.description':
-            'Specialized technologies and services for your IT project development',
-        'services.database': 'Databases',
-        'services.database.desc': 'Database design and optimization.',
-        'services.cloud': 'Cloud Solutions',
-        'services.cloud.desc': 'Migration and cloud deployment.',
-        'services.devops': 'DevOps',
-        'services.devops.desc': 'Deployment automation and monitoring.',
-        'services.support': 'Technical Support',
-        'services.support.desc': '24/7 support for your IT systems.',
-        'services.design': 'UI/UX Design',
-        'services.design.desc': 'Modern user interface design.',
-        'services.blockchain': 'Blockchain',
-        'services.blockchain.desc': 'Decentralized application development.',
+        // Pricing Section
+        'pricing.title': 'Transparent prices for any project',
+        'pricing.description': 'Choose the right service package for your business development',
+        'pricing.popular': 'Most Popular',
+        'pricing.questions': 'Have questions?',
+        'pricing.contact_team': 'Contact our team',
+        'pricing.starter.name': 'Starter',
+        'pricing.starter.price': 'From $1,200',
+        'pricing.starter.description': 'Perfect for small businesses and startups',
+        'pricing.starter.feature1': 'Landing page or simple website',
+        'pricing.starter.feature2': 'Responsive design',
+        'pricing.starter.feature3': 'Basic SEO optimization',
+        'pricing.starter.feature4': 'Technical support 3 months',
+        'pricing.starter.feature5': 'Hosting for 1 year',
+        'pricing.starter.button': 'Order',
+        'pricing.professional.name': 'Professional',
+        'pricing.professional.price': 'From $3,600',
+        'pricing.professional.period': 'per project',
+        'pricing.professional.description': 'For growing companies with extended needs',
+        'pricing.professional.feature1': 'Web application or e-commerce',
+        'pricing.professional.feature2': 'Admin panel',
+        'pricing.professional.feature3': 'API integration',
+        'pricing.professional.feature4': 'Analytics system',
+        'pricing.professional.feature5': 'Mobile version',
+        'pricing.professional.feature6': 'Technical support 6 months',
+        'pricing.professional.feature7': 'Priority support',
+        'pricing.professional.button': 'Discuss project',
+        'pricing.enterprise.name': 'Enterprise',
+        'pricing.enterprise.price': 'Custom',
+        'pricing.enterprise.description': 'For large organizations with complex requirements',
+        'pricing.enterprise.feature1': 'Corporate systems',
+        'pricing.enterprise.feature2': 'Integration with existing systems',
+        'pricing.enterprise.feature3': 'High security requirements',
+        'pricing.enterprise.feature4': 'Dedicated infrastructure',
+        'pricing.enterprise.feature5': 'Custom solutions',
+        'pricing.enterprise.feature6': 'Personal manager',
+        'pricing.enterprise.feature7': '24/7 support',
+        'pricing.enterprise.button': 'Contact us',
 
         // Blog Section
         'blog.title': 'Blog & Articles',
@@ -249,9 +281,18 @@ const translations = {
             'Some of our most successful IT projects and developments',
 
         // Testimonials Section
-        'testimonials.title': 'Client Testimonials',
+        'testimonials.title': 'Trusted by finance teams worldwide',
         'testimonials.description':
-            'Learn what our satisfied clients say about working with us',
+            'See how our platform transforms financial operations for businesses',
+        'testimonials.message.first': 'Our payment processing efficiency increased by 40% and transaction failures dropped to near zero. The automation features are game-changing.',
+        'testimonials.message.second':
+            'The real-time analytics and fraud detection capabilities have saved us millions. We can spot issues before they become problems.',
+        'testimonials.message.third': 'Compliance used to be a nightmare. Now our regulatory reporting is automated and we\'re always audit-ready.',
+
+        // Brand Section
+        'brand.title': 'Partners & Technologies',
+        'brand.description':
+            'We collaborate with leading technology companies and use the best solutions for your business.',
 
         // FAQ Section
         'faq.title': 'Frequently Asked Questions',
@@ -262,6 +303,16 @@ const translations = {
         'contact.title': 'Contact Us',
         'contact.description':
             'Fill out the form below to discuss your project. Our team will contact you within 24 hours to discuss the details.',
+        'contact.subtitle': 'Ready to start your project?',
+        'contact.subtitle2': 'Our team of experts is ready to help you bring your ideas to life. Contact us today for a free consultation.',
+        'contact.form_title': 'Send us a message',
+        'contact.form_first_name': 'First Name',
+        'contact.form_last_name': 'Last Name',
+        'contact.form_email': 'Email Address',
+        'contact.form_phone': 'Phone Number',
+        'contact.form_message': 'Tell us about your project...',
+        'contact.form_submit': 'Send Message',
+        'contact.address': 'Address',
         'contact.name': 'Name',
         'contact.email': 'Email',
         'contact.phone': 'Phone',
@@ -292,41 +343,50 @@ const translations = {
         'footer.privacy': 'Privacy Policy',
         'footer.terms': 'Terms of Use',
 
-        // Blog Section - specific posts
-        'blog.post.web.title': 'Modern Web Development Trends 2024',
-        'blog.post.web.excerpt':
-            'Overview of the latest technologies and frameworks for creating modern web applications, including React 18, Next.js 14 and TypeScript.',
-        'blog.post.web.category': 'Web Development',
-        'blog.post.mobile.title': 'Mobile Application Security',
-        'blog.post.mobile.excerpt':
-            'Best practices for ensuring mobile application security and protecting user data.',
-        'blog.post.mobile.category': 'Security',
-        'blog.post.cloud.title': 'Cloud Technologies for Business',
-        'blog.post.cloud.excerpt':
-            'How cloud solutions can optimize business processes and reduce company IT costs.',
-        'blog.post.cloud.category': 'Cloud Technologies',
-        'blog.post.devops.title': 'DevOps: Deployment Automation',
-        'blog.post.devops.excerpt':
-            'Implementation of CI/CD pipelines and automation of deployment processes to increase development efficiency.',
-        'blog.post.devops.category': 'DevOps',
-        'blog.post.design.title': 'UI/UX Design: Trends 2024',
-        'blog.post.design.excerpt':
-            'Modern approaches to user interface design and creating convenient user experience.',
-        'blog.post.design.category': 'Design',
+        'footer.menu1.title': 'Product',
+        'footer.menu1.link1': 'Features',
+        'footer.menu1.link2': 'Integrations',
+        'footer.menu1.link3': 'Pricing',
+        'footer.menu1.link4': 'Updates',
+        'footer.menu1.link5': 'Roadmap',
+        'footer.menu2.title': 'Company',
+        'footer.menu2.link1': 'Home',
+        'footer.menu2.link2': 'Features',
+        'footer.menu2.link3': 'Careers',
+        'footer.menu2.link4': 'FAQ',
+        'footer.menu2.link5': 'Contact',
 
         // Featured Section - projects
-        'projects.ecommerce.title': 'E-commerce Platform TechStore',
-        'projects.ecommerce.description':
-            'Full-featured e-commerce platform with payment system integration, order management system and analytics.',
-        'projects.ecommerce.category': 'Web Platform',
-        'projects.banking.title': 'Mobile Banking FinanceApp',
-        'projects.banking.description':
-            'Secure mobile application for banking operations with biometric authentication and data encryption.',
-        'projects.banking.category': 'Mobile Application',
-        'projects.security.title': 'Corporate Security System SecureNet',
-        'projects.security.description':
-            'Comprehensive information security system with multi-factor authentication, threat monitoring and cyber attack protection.',
-        'projects.security.category': 'Security System',
+        'projects1.title': 'Payment Automation',
+        'projects1.description':
+            'Automate payment processing and reconciliation to reduce manual errors and improve efficiency.',
+        'projects1.expandedDescription':
+            'Set up automated payment workflows with custom approval chains. Schedule recurring payments, automate invoice processing, and create conditional rules for different transaction types. Reduce manual intervention and ensure compliance with financial regulations.',
+        'projects2.title': 'Real-time Analytics',
+        'projects2.description':
+            'Gain insights into your financial operations with real-time data analytics and reporting.',
+        'projects2.expandedDescription':
+            'Track key financial metrics with customizable dashboards. Monitor cash flow, payment volumes, and transaction success rates in real-time. Generate detailed reports for stakeholders and identify trends before they impact your business.',
+        'projects3.title': 'Risk Management',
+        'projects3.description':
+            'Advanced fraud detection and risk assessment tools to protect your business.',
+        'projects3.expandedDescription':
+            'Implement machine learning algorithms to detect anomalies and potential fraud in real-time. Set up risk scoring for transactions, monitor patterns, and receive instant alerts for suspicious activity. Safeguard your business with enterprise-grade security measures.',
+        'projects4.title': 'Compliance Automation',
+        'projects4.description':
+            'Automate compliance reporting and ensure adherence to financial regulations.',
+        'projects4.expandedDescription':
+            'Streamline your compliance processes with automated reporting tools. Generate reports for regulatory bodies, track compliance metrics, and maintain audit trails effortlessly. Ensure your business meets all legal requirements without manual overhead.',
+        'projects5.title': 'Multi-currency Support',
+        'projects5.description':
+            'Support for multiple currencies and international transactions to expand your business reach.',
+        'projects5.expandedDescription':
+            'Process payments in various currencies with real-time exchange rates. Manage currency conversions, track multi-currency transactions, and provide a seamless experience for international customers. Expand your business globally with confidence.',
+        'projects6.title': 'API Integration',
+        'projects6.description':
+            'Powerful APIs for seamless integration with your existing financial systems.',
+        'projects6.expandedDescription':
+            'Integrate our platform with your existing ERP, CRM, or accounting systems using our robust APIs. Automate data exchange, synchronize transactions, and enhance your financial workflows. Customizable API endpoints to fit your specific needs.',
 
         // FAQ Section - questions and answers
         'faq.q1.question': 'How long does web application development take?',
@@ -348,23 +408,7 @@ const translations = {
         'faq.q6.answer':
             'Cost depends on project complexity, functionality and timeline. We provide free consultation and detailed estimate after analyzing your requirements.',
 
-        // Testimonials Section - specific testimonials
-        'testimonials.client1.name': 'Ivan Petrov',
-        'testimonials.client1.position': 'CEO',
-        'testimonials.client1.company': 'TechInnovations',
-        'testimonials.client1.testimonial':
-            'The Integral Revolut team created an excellent CRM system for us. Professional approach and quality technical support!',
-        'testimonials.client2.name': 'Maria Ivanova',
-        'testimonials.client2.position': 'IT Director',
-        'testimonials.client2.company': 'Creative Solutions',
-        'testimonials.client2.testimonial':
-            'The mobile application exceeded all expectations. Modern design, fast performance and excellent data security.',
-        'testimonials.client3.name': 'Alexey Sidorov',
-        'testimonials.client3.position': 'Project Manager',
-        'testimonials.client3.company': 'Future Technologies',
-        'testimonials.client3.testimonial':
-            'I recommend for any IT projects! Meeting deadlines, process transparency and high code quality.',
-    },
+        },
 }
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({

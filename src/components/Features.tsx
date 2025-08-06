@@ -15,9 +15,12 @@ import {
 } from 'lucide-react'
 import { useInView } from 'react-intersection-observer'
 import { easeOut, motion } from 'framer-motion'
+import { useLanguage } from '@/hooks/useLanguage.tsx'
 
 const Features = () => {
     const [openFeature, setOpenFeature] = useState<number | null>(null)
+
+    const { t } = useLanguage()
 
     const { ref, inView: isInView } = useInView({
         triggerOnce: true,
@@ -61,51 +64,39 @@ const Features = () => {
 
     const features = [
         {
-            title: 'Payment Automation',
-            description:
-                'Automate payment processing and reconciliation to reduce manual errors and improve efficiency.',
-            expandedDescription:
-                'Set up automated payment workflows with custom approval chains. Schedule recurring payments, automate invoice processing, and create conditional rules for different transaction types. Reduce manual intervention and ensure compliance with financial regulations.',
+            title: t('projects1.title'),
+            description: t('projects1.description'),
+            expandedDescription: t('projects1.expandedDescription'),
             icon: <Layers size={24} className="text-cosmic-accent" />,
         },
         {
-            title: 'Real-time Analytics',
-            description:
-                'Monitor financial performance with real-time dashboards and comprehensive reporting.',
-            expandedDescription:
-                'Track key financial metrics with customizable dashboards. Monitor cash flow, payment volumes, and transaction success rates in real-time. Generate detailed reports for stakeholders and identify trends before they impact your business.',
+            title: t('projects2.title'),
+            description: t('projects2.description'),
+            expandedDescription: t('projects2.expandedDescription'),
             icon: <Grid3x3 size={24} className="text-cosmic-accent" />,
         },
         {
-            title: 'Risk Management',
-            description:
-                'Advanced fraud detection and risk assessment tools to protect your business.',
-            expandedDescription:
-                'Utilize machine learning algorithms to detect suspicious transactions and prevent fraud. Set up custom risk rules, monitor transaction patterns, and receive instant alerts for unusual activity. Protect your business with enterprise-grade security measures.',
+            title: t('projects3.title'),
+            description: t('projects3.description'),
+            expandedDescription: t('projects3.expandedDescription'),
             icon: <LayoutDashboard size={24} className="text-cosmic-accent" />,
         },
         {
-            title: 'Compliance Tools',
-            description:
-                'Built-in compliance features to meet regulatory requirements effortlessly.',
-            expandedDescription:
-                'Stay compliant with financial regulations across multiple jurisdictions. Automated KYC/AML checks, transaction monitoring, and regulatory reporting. Generate audit trails and maintain documentation to meet compliance standards.',
+            title: t('projects4.title'),
+            description: t('projects4.description'),
+            expandedDescription: t('projects4.expandedDescription'),
             icon: <ListCheck size={24} className="text-cosmic-accent" />,
         },
         {
-            title: 'Multi-currency Support',
-            description:
-                'Process payments in multiple currencies with real-time exchange rates.',
-            expandedDescription:
-                'Accept and process payments in over 150 currencies with competitive exchange rates. Automatic currency conversion, hedging tools, and multi-currency accounting. Expand your business globally with seamless international payment processing.',
+            title: t('projects5.title'),
+            description: t('projects5.description'),
+            expandedDescription: t('projects5.expandedDescription'),
             icon: <Star size={24} className="text-cosmic-accent" />,
         },
         {
-            title: 'API Integration',
-            description:
-                'Powerful APIs for seamless integration with your existing financial systems.',
-            expandedDescription:
-                'Connect with your ERP, accounting software, and banking systems through our comprehensive APIs. Real-time webhooks, detailed documentation, and SDKs for popular programming languages. Build custom integrations that fit your unique business needs.',
+            title: t('projects6.title'),
+            description: t('projects6.description'),
+            expandedDescription: t('projects6.expandedDescription'),
             icon: <BookOpen size={24} className="text-cosmic-accent" />,
         },
     ]
@@ -177,9 +168,7 @@ const Features = () => {
                                             {feature.expandedDescription}
                                         </p>
                                         <div className="mt-4 flex justify-end">
-                                            <button className="text-cosmic-accent hover:text-cosmic-accent/80 text-sm font-medium">
-                                                Learn more →
-                                            </button>
+
                                         </div>
                                     </div>
                                 </CollapsibleContent>

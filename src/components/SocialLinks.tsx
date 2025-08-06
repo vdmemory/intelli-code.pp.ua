@@ -21,10 +21,16 @@ const SocialLinks = ({
             color: '#FBB216',
         },
         {
-            icon: 'upwork.png',
-            href: configCompany.upwork,
+            icon: 'linkedin.png',
+            href: configCompany.linkedin,
             color: '#64B232',
         },
+        {
+            icon: 'prom.png',
+            href: configCompany.prom,
+            color: '#FBB216',
+        },
+
     ]
 
     const links = isHeader ? socialLinks.slice(0, 3) : socialLinks

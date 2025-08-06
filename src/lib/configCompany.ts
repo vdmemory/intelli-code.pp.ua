@@ -11,6 +11,5 @@ export const configCompany = {
     instagram: 'https://www.instagram.com/',
     linkedin: 'https://www.linkedin.com/',
     whatsapp: 'https://www.whatsapp.com/',
-    upwork: 'https://www.upwork.com/',
     prom: 'https://prom.ua/ua/c4125167-tov-oten-bajt.htm',
 }

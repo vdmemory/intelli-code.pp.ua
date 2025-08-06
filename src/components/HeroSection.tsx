@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import { Loader } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useLanguage } from '@/hooks/useLanguage.tsx'
 
 const HeroSection = () => {
+    const { t } = useLanguage()
     const [isVisible, setIsVisible] = useState(false)
     const backgroundRef = useRef<HTMLDivElement>(null)
 
@@ -31,6 +33,14 @@ const HeroSection = () => {
             window.removeEventListener('mousemove', handleMouseMove)
         }
     }, [])
+
+    const handleNavClick = (page: string) => (e: React.MouseEvent) => {
+        e.preventDefault()
+        const element = document.getElementById(page)
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 
     return (
         <section
@@ -64,40 +74,45 @@ const HeroSection = () => {
             <div
                 className={`relative z-10 max-w-4xl text-center space-y-6 transition-all duration-700 transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
             >
+                <div className="pt-6 text-sm text-muted-foreground">
+                </div>
                 <div className="flex justify-center">
                     <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium rounded-full bg-muted text-primary">
                         <span className="flex h-2 w-2 rounded-full bg-primary"></span>
-                        Launching new payment features
+                        {t('hero.badge')}
                         <Loader className="h-3 w-3 animate-spin text-primary" />
                     </span>
                 </div>
 
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-balance text-foreground">
-                    Financial operations for{' '}
-                    <span className="text-foreground">growth</span> businesses
+                    {t('hero.title')}{' '}
+                    <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{t('hero.title.highlight')}</span>{' '}
+                    {t('hero.title2')}
                 </h1>
 
                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-                    Streamline your financial workflows with our comprehensive
-                    fintech platform. Built for modern businesses who value
-                    efficiency, compliance, and scalable growth.
+                    {t('hero.description')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 items-center">
-                    <Button className="bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground text-base h-12 px-8 transition-all duration-200 min-h-[48px]">
-                        Start for free
+                    <Button  onClick={handleNavClick('contacts')} className="bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground text-base h-12 px-8 transition-all duration-200 min-h-[48px]">
+                        {t('hero.contact')}
                     </Button>
                     <Button
+                        onClick={handleNavClick('features')}
                         variant="outline"
                         className="border-border text-foreground hover:bg-accent hover:text-accent-foreground text-base h-12 px-8 transition-all duration-200 min-h-[48px]"
                     >
-                        Book a demo
+                        {t('hero.services')}
                     </Button>
                 </div>
 
+
                 <div className="pt-6 text-sm text-muted-foreground">
-                    No credit card required • Free 14-day trial
                 </div>
+                <div className="pt-6 text-sm text-muted-foreground">
+                </div>
+
             </div>
         </section>
     )

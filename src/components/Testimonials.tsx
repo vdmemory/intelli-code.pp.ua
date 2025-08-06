@@ -1,8 +1,11 @@
 import React from 'react'
 import { easeInOut, motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { useLanguage } from '@/hooks/useLanguage.tsx'
 
 const Testimonials = () => {
+    const { t } = useLanguage()
+
     const { ref, inView } = useInView({
         triggerOnce: true,
         threshold: 0.1,
@@ -58,19 +61,19 @@ const Testimonials = () => {
 
     const testimonials = [
         {
-            quote: 'Our payment processing efficiency increased by 40% and transaction failures dropped to near zero. The automation features are game-changing.',
+            quote: t('testimonials.message.first'),
             author: 'Sarah Johnson',
             position: 'CFO at TechCorp',
             avatar: 'bg-cosmic-light/30',
         },
         {
-            quote: 'The real-time analytics and fraud detection capabilities have saved us millions. We can spot issues before they become problems.',
+            quote: t('testimonials.message.second'),
             author: 'Michael Chen',
             position: 'Head of Risk at FinanceFlow',
             avatar: 'bg-cosmic-light/20',
         },
         {
-            quote: "Compliance used to be a nightmare. Now our regulatory reporting is automated and we're always audit-ready.",
+            quote: t('testimonials.message.third'),
             author: 'Leila Rodriguez',
             position: 'Operations Director at GlobalPay',
             avatar: 'bg-cosmic-light/40',
@@ -111,14 +114,13 @@ const Testimonials = () => {
                         className="text-2xl md:text-3xl font-bold tracking-tighter text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
                         variants={titleVariants}
                     >
-                        Trusted by finance teams worldwide
+                        {t('testimonials.title')}
                     </motion.h2>
                     <motion.p
                         className="text-muted-foreground text-lg"
                         variants={itemVariants}
                     >
-                        See how our platform transforms financial operations for
-                        businesses
+                        {t('testimonials.description')}
                     </motion.p>
                 </motion.div>
 
