@@ -17,7 +17,7 @@ const Header = () => {
     const ukTitles = {
         features: 'Особливості',
         pricing: 'Ціни',
-        faq: 'Питання та відповіді',
+        faq: 'Питання',
         contacts: 'Контакти',
     }
 
