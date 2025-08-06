@@ -1,0 +1,222 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 258 100% 9%; /* Deep purple background */
+    --foreground: 0 0% 98%; /* Almost white */
+
+    --card: 258 88% 12%; /* Purple card background */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 258 88% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 46 98% 52%; /* Bright yellow #FED40D */
+    --primary-foreground: 258 100% 9%;
+
+    --secondary: 322 91% 64%; /* Pink #FF4594 */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 258 88% 15%; /* Darker purple */
+    --muted-foreground: 0 0% 75%;
+
+    --accent: 186 52% 52%; /* Teal #51BEBE */
+    --accent-foreground: 258 100% 9%;
+
+    --destructive: 12 100% 62%; /* Orange #FF753B */
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 26 90% 37%;
+    --input: 258 88% 18%;
+    --ring: 46 98% 52%;
+
+    /* Additional custom colors from your palette */
+    --yellow: 46 98% 52%; /* #FED40D */
+    --orange: 12 100% 62%; /* #FF753B */
+    --pink: 322 91% 64%; /* #FF4594 */
+    --purple: 272 97% 66%; /* #D14CFE */
+    --teal: 180 52% 52%; /* #51BEBE */
+    --green: 132 76% 63%; /* #66E07C */
+    --blue: 234 95% 69%; /* #6C85FA */
+    --cyan: 192 62% 55%; /* #4DB5CD */
+
+    --radius: 0.5rem;
+  }
+
+  .light-mode {
+    --background: 0 0% 98%; /* Light background */
+    --foreground: 258 100% 15%; /* Dark purple text */
+
+    --card: 0 0% 96%; /* Light card background */
+    --card-foreground: 258 100% 15%;
+
+    --popover: 0 0% 96%;
+    --popover-foreground: 258 100% 15%;
+
+    --primary: 272 97% 66%; /* Purple #D14CFE */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 132 76% 63%; /* Green #66E07C */
+    --secondary-foreground: 258 100% 15%;
+
+    --muted: 0 0% 88%;
+    --muted-foreground: 258 50% 25%;
+
+    --accent: 234 95% 69%; /* Blue #6C85FA */
+    --accent-foreground: 0 0% 98%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 90%;
+    --ring: 272 97% 66%;
+
+    /* Light mode custom colors */
+    --yellow: 46 98% 45%; /* Darker yellow for better contrast */
+    --orange: 12 100% 55%; /* Darker orange */
+    --pink: 322 91% 55%; /* Darker pink */
+    --purple: 272 97% 60%; /* Darker purple */
+    --teal: 180 52% 45%; /* Darker teal */
+    --green: 132 76% 55%; /* Darker green */
+    --blue: 234 95% 60%; /* Darker blue */
+    --cyan: 192 62% 45%; /* Darker cyan */
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background font-inter text-foreground antialiased;
+    letter-spacing: -0.025em;
+  }
+  
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .cosmic-gradient {
+    background: linear-gradient(135deg, hsl(var(--purple) / 0.2) 0%, hsl(var(--pink) / 0.3) 50%, hsl(var(--blue) / 0.2) 100%);
+  }
+
+  .light-mode .cosmic-gradient {
+    background: linear-gradient(135deg, hsl(var(--teal) / 0.3) 0%, hsl(var(--green) / 0.2) 50%, hsl(var(--cyan) / 0.3) 100%);
+  }
+
+  .cosmic-glow {
+    position: relative;
+  }
+
+  .cosmic-glow::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    z-index: -1;
+    border-radius: inherit;
+  }
+
+  .light-mode .cosmic-glow::before {
+    background: radial-gradient(circle at center, rgba(64, 64, 64, 0.08) 0%, transparent 70%);
+  }
+
+  .cosmic-grid {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .light-mode .cosmic-grid {
+    background-image: 
+      linear-gradient(rgba(64, 64, 64, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(64, 64, 64, 0.08) 1px, transparent 1px);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .cosmic-glass {
+    @apply backdrop-blur-sm bg-card border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)];
+  }
+
+  .light-mode .cosmic-glass {
+    @apply backdrop-blur-sm bg-card border border-black/10 shadow-[0_0_15px_rgba(0,0,0,0.05)];
+  }
+  
+  .cosmic-card {
+    @apply bg-card border border-border backdrop-blur-sm;
+  }
+  
+  .nav-pill {
+    @apply backdrop-blur-md bg-card border border-border rounded-full;
+  }
+  
+  .nav-pill-item {
+    @apply px-4 py-2 text-sm rounded-full transition-colors;
+  }
+  
+  .nav-pill-item:hover {
+    @apply bg-accent text-accent-foreground;
+  }
+  
+  .nav-pill-item.active {
+    @apply bg-accent text-accent-foreground;
+  }
+  
+  .icon-glow {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+    transition: filter 0.3s ease;
+  }
+
+  .light-mode .icon-glow {
+    filter: drop-shadow(0 0 6px rgba(64, 64, 64, 0.2));
+  }
+  
+  .collapsible-trigger:hover .icon-glow {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  }
+
+  .light-mode .collapsible-trigger:hover .icon-glow {
+    filter: drop-shadow(0 0 10px rgba(64, 64, 64, 0.3));
+  }
+
+  .task-card {
+    @apply transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:border-primary/30;
+  }
+  
+  .task-card.dragging {
+    @apply scale-105 shadow-lg border-primary opacity-70 rotate-1 z-10;
+  }
+  
+  .task-card.dragged-over {
+    @apply border-primary border-dashed;
+  }
+  
+  .task-card-enter {
+    @apply opacity-0 -translate-y-4;
+  }
+  
+  .task-card-enter-active {
+    @apply opacity-100 translate-y-0 transition-all duration-300 ease-out;
+  }
+  
+  .task-card-exit {
+    @apply opacity-100;
+  }
+  
+  .task-card-exit-active {
+    @apply opacity-0 translate-y-4 transition-all duration-300 ease-in;
+  }
+  
+  .column-highlight {
+    @apply bg-accent/20 transition-all duration-300;
+  }
+}
