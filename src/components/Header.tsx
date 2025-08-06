@@ -5,11 +5,28 @@ import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 import SocialLinks from '@/components/SocialLinks.tsx'
 import LanguageSwitcher from '@/components/LanguageSwitcher.tsx'
 import { configCompany } from '@/lib/configCompany.ts'
+import { useLanguage } from '@/hooks/useLanguage.tsx'
 
 const Header = () => {
     const [activePage, setActivePage] = useState('features')
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [isDarkMode] = useState(true) // Default to light mode
+
+    const { language } = useLanguage()
+
+    const ukTitles = {
+        features: 'Особливості',
+        pricing: 'Ціни',
+        faq: 'Питання та відповіді',
+        contacts: 'Контакти',
+    }
+
+    const engTitles = {
+        features: 'Features',
+        pricing: 'Pricing',
+        faq: 'FAQ',
+        contacts: 'Contacts',
+    }
 
     useEffect(() => {
         // Apply the theme to the document when it changes
@@ -82,7 +99,9 @@ const Header = () => {
                                 )}
                                 onClick={handleNavClick('features')}
                             >
-                                Features
+                                {language === 'uk'
+                                    ? ukTitles.features
+                                    : engTitles.features}
                             </ToggleGroupItem>
                             <ToggleGroupItem
                                 value="pricing"
@@ -94,7 +113,9 @@ const Header = () => {
                                 )}
                                 onClick={handleNavClick('pricing')}
                             >
-                                Pricing
+                                {language === 'uk'
+                                    ? ukTitles.pricing
+                                    : engTitles.pricing}
                             </ToggleGroupItem>
                             <ToggleGroupItem
                                 value="faq"
@@ -106,7 +127,9 @@ const Header = () => {
                                 )}
                                 onClick={handleNavClick('faq')}
                             >
-                                FAQ
+                                {language === 'uk'
+                                    ? ukTitles.faq
+                                    : engTitles.faq}
                             </ToggleGroupItem>
                             <ToggleGroupItem
                                 value="contacts"
@@ -118,7 +141,9 @@ const Header = () => {
                                 )}
                                 onClick={handleNavClick('contacts')}
                             >
-                                Contacts
+                                {language === 'uk'
+                                    ? ukTitles.contacts
+                                    : engTitles.contacts}
                             </ToggleGroupItem>
                         </ToggleGroup>
                     </div>
@@ -141,18 +166,9 @@ const Header = () => {
                                 }`}
                                 onClick={handleNavClick('features')}
                             >
-                                Features
-                            </a>
-                            <a
-                                href="#dashboard"
-                                className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                                    activePage === 'dashboard'
-                                        ? 'bg-accent text-accent-foreground'
-                                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                                }`}
-                                onClick={handleNavClick('dashboard')}
-                            >
-                                Dashboard
+                                {language === 'uk'
+                                    ? ukTitles.features
+                                    : engTitles.features}
                             </a>
                             <a
                                 href="#pricing"
@@ -163,7 +179,24 @@ const Header = () => {
                                 }`}
                                 onClick={handleNavClick('pricing')}
                             >
-                                Pricing
+                                {language === 'uk'
+                                    ? ukTitles.pricing
+                                    : engTitles.pricing}
+
+                            </a>
+                            <a
+                                href="#faq"
+                                className={`px-3 py-2 text-sm rounded-md transition-colors ${
+                                    activePage === 'faq'
+                                        ? 'bg-accent text-accent-foreground'
+                                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                                }`}
+                                onClick={handleNavClick('faq')}
+                            >
+                                {language === 'uk'
+                                    ? ukTitles.faq
+                                    : engTitles.faq}
+
                             </a>
                             <a
                                 href="#contacts"
@@ -174,7 +207,9 @@ const Header = () => {
                                 }`}
                                 onClick={handleNavClick('contacts')}
                             >
-                                Contacts
+                                {language === 'uk'
+                                    ? ukTitles.contacts
+                                    : engTitles.contacts}
                             </a>
                         </div>
                     </div>
