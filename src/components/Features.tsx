@@ -118,13 +118,13 @@ const Features = () => {
                         className="text-2xl md:text-3xl font-bold tracking-tighter text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
                         variants={itemVariants}
                     >
-                        {t('features.title')}
+                        {t('featured.title')}
                     </motion.h2>
                     <motion.p
                         className="text-muted-foreground"
                         variants={itemVariants}
                     >
-                        {t('features.description')}
+                        {t('featured.subtitle')}
                     </motion.p>
                 </motion.div>
 
