@@ -118,14 +118,13 @@ const Features = () => {
                         className="text-2xl md:text-3xl font-bold tracking-tighter text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
                         variants={itemVariants}
                     >
-                        Everything your business needs
+                        {t('features.title')}
                     </motion.h2>
                     <motion.p
                         className="text-muted-foreground"
                         variants={itemVariants}
                     >
-                        Comprehensive fintech solutions to streamline your
-                        financial operations and drive growth
+                        {t('features.description')}
                     </motion.p>
                 </motion.div>
 

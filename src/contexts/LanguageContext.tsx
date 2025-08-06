@@ -161,6 +161,9 @@ const translations = {
         'footer.menu2.link5': 'Контакти',
 
         // Featured Section - projects
+        'featured.title': 'Все, що потрібно вашому бізнесу',
+        'featured.subtitle': 'Комплексні фінансові рішення для оптимізації ваших фінансових операцій та стимулювання зростання',
+
         'projects1.title': 'Автоматизація платежів',
         'projects1.description':
             'Автоматизуйте обробку платежів - зменшення помилок, підвищення ефективності.',
@@ -357,6 +360,9 @@ const translations = {
         'footer.menu2.link5': 'Contact',
 
         // Featured Section - projects
+        'featured.title': 'Everything your business needs',
+        'featured.subtitle': 'Comprehensive fintech solutions to streamline your financial operations and drive growth',
+
         'projects1.title': 'Payment Automation',
         'projects1.description':
             'Automate payment processing and reconciliation to reduce manual errors and improve efficiency.',
