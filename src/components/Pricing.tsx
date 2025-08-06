@@ -1,8 +1,76 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
+import { useInView } from 'react-intersection-observer'
+import { easeInOut, motion } from 'framer-motion'
 
 const Pricing = () => {
+
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.1,
+    })
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.3,
+            },
+        },
+    }
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: easeInOut,
+            },
+        },
+    }
+
+    const cardVariants = {
+        hidden: { opacity: 0, scale: 0.9, y: 30 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition: {
+                duration: 0.7,
+                ease: easeInOut,
+            },
+        },
+    }
+
+    const titleVariants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: easeInOut,
+            },
+        },
+    }
+
+    const featureVariants = {
+        hidden: { opacity: 0, x: -20 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.5,
+                ease: easeInOut,
+            },
+        },
+    }
+
+
     const plans = [
         {
             name: 'Starter',
@@ -63,27 +131,50 @@ const Pricing = () => {
         <section
             id="pricing"
             className="w-full py-20 px-6 md:px-12 bg-background"
+            ref={ref}
         >
             <div className="max-w-7xl mx-auto space-y-16">
-                <div className="text-center space-y-4 max-w-3xl mx-auto">
-                    <h2 className="text-2xl md:text-3xl font-bold tracking-tighter text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <motion.div
+                    className="text-center space-y-4 max-w-3xl mx-auto"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={inView ? 'visible' : 'hidden'}
+                >
+                    <motion.h2
+                        className="text-2xl md:text-3xl font-bold tracking-tighter text-foreground bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+                        variants={titleVariants}
+                    >
                         Transparent pricing for every stage
-                    </h2>
-                    <p className="text-muted-foreground text-lg">
+                    </motion.h2>
+                    <motion.p
+                        className="text-muted-foreground text-lg"
+                        variants={itemVariants}
+                    >
                         Scale your financial operations with plans that grow
                         with your business
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate={inView ? 'visible' : 'hidden'}
+                >
                     {plans.map((plan, index) => (
-                        <div
+                        <motion.div
                             key={index}
                             className={`p-6 rounded-xl border flex flex-col h-full ${
                                 plan.popular
                                     ? 'border-primary/50 cosmic-glow bg-card'
                                     : 'border-border cosmic-gradient bg-card'
                             } transition-all duration-300 relative`}
+                            variants={cardVariants}
+                            whileHover={{
+                                scale: 1.02,
+                                y: -5,
+                                transition: { duration: 0.3 }
+                            }}
                         >
                             {plan.popular && (
                                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-sm rounded-full font-medium">
@@ -92,11 +183,14 @@ const Pricing = () => {
                             )}
 
                             <div className="mb-auto">
-                                <h3 className="text-2xl font-medium tracking-tighter mb-1 text-foreground">
+                                <motion.h3
+                                    className="text-2xl font-medium tracking-tighter mb-1 text-foreground"
+                                    variants={itemVariants}
+                                >
                                     {plan.name}
-                                </h3>
+                                </motion.h3>
 
-                                <div className="mb-4">
+                                <motion.div className="mb-4" variants={itemVariants}>
                                     <div className="text-3xl font-bold tracking-tighter text-foreground">
                                         {plan.price}
                                     </div>
@@ -105,17 +199,24 @@ const Pricing = () => {
                                             {plan.period}
                                         </div>
                                     )}
-                                </div>
+                                </motion.div>
 
-                                <p className="text-muted-foreground mb-6">
+                                <motion.p
+                                    className="text-muted-foreground mb-6"
+                                    variants={itemVariants}
+                                >
                                     {plan.description}
-                                </p>
+                                </motion.p>
 
                                 <div className="space-y-3 mb-8">
                                     {plan.features.map((feature, i) => (
-                                        <div
+                                        <motion.div
                                             key={i}
                                             className="flex items-center gap-3"
+                                            variants={featureVariants}
+                                            initial="hidden"
+                                            animate={inView ? 'visible' : 'hidden'}
+                                            transition={{ delay: 0.3 + i * 0.05 }}
                                         >
                                             <div className="h-5 w-5 rounded-full bg-primary/20 flex items-center justify-center text-primary">
                                                 <svg
@@ -137,12 +238,15 @@ const Pricing = () => {
                                             <span className="text-sm text-foreground">
                                                 {feature}
                                             </span>
-                                        </div>
+                                        </motion.div>
                                     ))}
                                 </div>
                             </div>
 
-                            <div className="mt-6">
+                            <motion.div
+                                className="mt-6"
+                                variants={itemVariants}
+                            >
                                 <Button
                                     className={
                                         plan.buttonVariant === 'default'
@@ -157,10 +261,11 @@ const Pricing = () => {
                                 >
                                     {plan.buttonText}
                                 </Button>
-                            </div>
-                        </div>
+                            </motion.div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
+
 
                 <div className="text-center text-muted-foreground">
                     Have questions?{' '}

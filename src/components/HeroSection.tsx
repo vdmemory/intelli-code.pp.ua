@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
-import TaskBoard from './TaskBoard'
 import { Loader } from 'lucide-react'
+import { motion } from 'framer-motion'
+
 const HeroSection = () => {
     const [isVisible, setIsVisible] = useState(false)
     const backgroundRef = useRef<HTMLDivElement>(null)
@@ -37,7 +38,7 @@ const HeroSection = () => {
             className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background"
         >
             {/* Background Elements */}
-            <div
+            <motion.div  // Wrap the background element with motion.div
                 ref={backgroundRef}
                 className="absolute inset-[-45px] z-0 transition-transform duration-500 ease-out"
                 style={{
@@ -46,10 +47,12 @@ const HeroSection = () => {
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
-                    opacity: 0.7,
                     backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 }}
-            ></div>
+                initial={{ opacity: 0 }}  // Start fully transparent
+                animate={{ opacity: 0.7 }}  // Fade in to 0.7 opacity
+                transition={{ duration: 1.5, ease: "easeInOut" }} // Adjust duration and easing
+            />
 
             <div className="absolute inset-0 cosmic-grid opacity-30"></div>
 

@@ -29,8 +29,8 @@ const Features = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.1,
-                delayChildren: 0.2,
+                staggerChildren: 0.15, // Increased stagger for smoother effect
+                delayChildren: 0.3,
             },
         },
     }
@@ -41,19 +41,19 @@ const Features = () => {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 0.6,
+                duration: 0.7, // Adjusted duration
                 ease: easeOut,
             },
         },
     }
 
-    const brandVariants = {
-        hidden: { opacity: 0, scale: 0.8 },
+    const collapsibleVariants = {
+        hidden: { opacity: 0, y: 20 },
         visible: {
             opacity: 1,
-            scale: 1,
+            y: 0,
             transition: {
-                duration: 0.5,
+                duration: 0.6,
                 ease: easeOut,
             },
         },
@@ -140,45 +140,51 @@ const Features = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {features.map((feature, index) => (
-                        <Collapsible
+                        <motion.div
                             key={index}
-                            open={openFeature === index}
-                            onOpenChange={() => toggleFeature(index)}
-                            className={`rounded-xl border ${openFeature === index ? 'border-cosmic-light/40' : 'border-cosmic-light/20'} cosmic-gradient transition-all duration-300`}
+                            variants={collapsibleVariants}
+                            initial="hidden"
+                            animate={isInView ? 'visible' : 'hidden'}
                         >
-                            <CollapsibleTrigger className="w-full text-left p-6 flex flex-col">
-                                <div className="flex justify-between items-start">
-                                    <div className="h-16 w-16 rounded-full bg-cosmic-light/10 flex items-center justify-center mb-6">
-                                        {feature.icon}
+                            <Collapsible
+                                open={openFeature === index}
+                                onOpenChange={() => toggleFeature(index)}
+                                className={`rounded-xl border ${openFeature === index ? 'border-cosmic-light/40' : 'border-cosmic-light/20'} cosmic-gradient transition-all duration-300`}
+                            >
+                                <CollapsibleTrigger className="w-full text-left p-6 flex flex-col">
+                                    <div className="flex justify-between items-start">
+                                        <div className="h-16 w-16 rounded-full bg-cosmic-light/10 flex items-center justify-center mb-6">
+                                            {feature.icon}
+                                        </div>
+                                        <ChevronDown
+                                            className={`h-5 w-5 text-cosmic-muted transition-transform duration-200 ${
+                                                openFeature === index
+                                                    ? 'rotate-180'
+                                                    : ''
+                                            }`}
+                                        />
                                     </div>
-                                    <ChevronDown
-                                        className={`h-5 w-5 text-cosmic-muted transition-transform duration-200 ${
-                                            openFeature === index
-                                                ? 'rotate-180'
-                                                : ''
-                                        }`}
-                                    />
-                                </div>
-                                <h3 className="text-xl font-medium tracking-tighter mb-3">
-                                    {feature.title}
-                                </h3>
-                                <p className="text-cosmic-muted">
-                                    {feature.description}
-                                </p>
-                            </CollapsibleTrigger>
-                            <CollapsibleContent className="px-6 pb-6 pt-2">
-                                <div className="pt-3 border-t border-cosmic-light/10">
+                                    <h3 className="text-xl font-medium tracking-tighter mb-3">
+                                        {feature.title}
+                                    </h3>
                                     <p className="text-cosmic-muted">
-                                        {feature.expandedDescription}
+                                        {feature.description}
                                     </p>
-                                    <div className="mt-4 flex justify-end">
-                                        <button className="text-cosmic-accent hover:text-cosmic-accent/80 text-sm font-medium">
-                                            Learn more →
-                                        </button>
+                                </CollapsibleTrigger>
+                                <CollapsibleContent className="px-6 pb-6 pt-2">
+                                    <div className="pt-3 border-t border-cosmic-light/10">
+                                        <p className="text-cosmic-muted">
+                                            {feature.expandedDescription}
+                                        </p>
+                                        <div className="mt-4 flex justify-end">
+                                            <button className="text-cosmic-accent hover:text-cosmic-accent/80 text-sm font-medium">
+                                                Learn more →
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                            </CollapsibleContent>
-                        </Collapsible>
+                                </CollapsibleContent>
+                            </Collapsible>
+                        </motion.div>
                     ))}
                 </div>
             </div>
