@@ -4,11 +4,29 @@ import { configCompany } from '@/lib/configCompany.ts'
 
 const Footer = () => {
     return (
-        <footer className="w-full py-16 px-6 md:px-12 border-t border-border bg-card">
+        <footer className="w-full py-16 px-6 md:px-12 border-t border-border bg-transparent relative overflow-hidden">
+
+            {/* Background Elements */}
+            <div
+                // ref={backgroundRef}
+                className="absolute inset-[-45px] z-0 transition-transform duration-500 ease-out"
+                style={{
+                    willChange: 'transform',
+                    backgroundImage: `url('bg6.png')`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    opacity: 0.2,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    filter: 'blur(8px)',
+                }}
+            ></div>
+
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+
                     <div className="md:col-span-2 space-y-6">
-                        <div className="relative flex items-center space-x-2 rounded-full py-1 backdrop-blur-md gap-2 shadow-lg">
+                        <div className="relative flex items-center space-x-2 rounded-full py-1 gap-2 shadow-lg">
                             <img
                                 src="logo.png"
                                 alt="Logo"
@@ -20,8 +38,7 @@ const Footer = () => {
                             </h1>
                         </div>
                         <p className="text-muted-foreground max-w-xs">
-                            Modern task management for teams that value clarity,
-                            focus, and results.
+                            {configCompany.info}{' '}{configCompany.address}
                         </p>
                         <div className="flex items-center gap-4">
                             <SocialLinks />
@@ -126,49 +143,9 @@ const Footer = () => {
 
                     <div className="space-y-4">
                         <h4 className="font-medium text-lg text-foreground">
-                            Resources
                         </h4>
                         <ul className="space-y-3">
-                            <li>
-                                <a
-                                    href="#"
-                                    className="text-muted-foreground hover:text-foreground transition-colors"
-                                >
-                                    Documentation
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="text-muted-foreground hover:text-foreground transition-colors"
-                                >
-                                    Help Center
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="text-muted-foreground hover:text-foreground transition-colors"
-                                >
-                                    Guides & Tutorials
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="text-muted-foreground hover:text-foreground transition-colors"
-                                >
-                                    API Reference
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="#"
-                                    className="text-muted-foreground hover:text-foreground transition-colors"
-                                >
-                                    Community
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>

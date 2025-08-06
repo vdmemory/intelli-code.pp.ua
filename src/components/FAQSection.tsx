@@ -114,19 +114,20 @@ const FAQSection = () => {
         >
             <div className="absolute inset-0 cosmic-grid opacity-5"></div>
 
-            {/* Background decorative elements */}
-            <motion.div
-                className="absolute top-20 right-20 w-40 h-40 bg-primary/5 rounded-full blur-xl"
-                animate={{
-                    scale: [1, 1.3, 1],
-                    opacity: [0.3, 0.6, 0.3],
+            {/* Background Elements */}
+            <div
+                // ref={backgroundRef}
+                className="absolute inset-[-45px] z-0 transition-transform duration-500 ease-out"
+                style={{
+                    willChange: 'transform',
+                    backgroundImage: `url('bg4.png')`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    opacity: 0.6,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 }}
-                transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                }}
-            />
+            ></div>
 
             <div className="max-w-4xl mx-auto space-y-16 relative z-10">
                 <motion.div

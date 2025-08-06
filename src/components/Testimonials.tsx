@@ -24,6 +24,22 @@ const Testimonials = () => {
 
     return (
         <section className="w-full py-20 px-6 md:px-12 bg-card relative overflow-hidden">
+
+            {/* Background Elements */}
+            <div
+                // ref={backgroundRef}
+                className="absolute inset-[-45px] z-0 transition-transform duration-500 ease-out"
+                style={{
+                    willChange: 'transform',
+                    backgroundImage: `url('bg5.png')`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    opacity: 0.2,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                }}
+            ></div>
+
             {/* Background grid */}
             <div className="absolute inset-0 cosmic-grid opacity-20"></div>
 

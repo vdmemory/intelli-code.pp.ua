@@ -95,13 +95,13 @@ const ContactSection = () => {
 
             {/* Background decorative image */}
             <motion.div
-                className="absolute top-80 right-20 w-80 h-80"
+                className="absolute top-96 right-0 h-96"
                 initial={{ opacity: 0, scale: 0.8, rotate: 45 }}
                 animate={isInView ? { opacity: 0.4, scale: 1, rotate: 0 } : {}}
                 transition={{ duration: 1.5 }}
             >
                 <img
-                    src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    src="contact.png"
                     alt="Contact us"
                     className="w-full h-full object-cover rounded-lg"
                 />

@@ -1,20 +1,56 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Button } from '@/components/ui/button'
 import TaskBoard from './TaskBoard'
 import { Loader } from 'lucide-react'
 const HeroSection = () => {
     const [isVisible, setIsVisible] = useState(false)
+    const backgroundRef = useRef<HTMLDivElement>(null)
+
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(true)
         }, 300)
         return () => clearTimeout(timer)
     }, [])
+
+    useEffect(() => {
+        const handleMouseMove = (e: MouseEvent) => {
+            if (!backgroundRef.current) return
+
+            const x = e.clientX / window.innerWidth
+            const y = e.clientY / window.innerHeight
+
+            backgroundRef.current.style.transform = `translate(${x * -45}px, ${y * -45}px)`
+        }
+
+        window.addEventListener('mousemove', handleMouseMove)
+
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove)
+        }
+    }, [])
+
     return (
         <section
             id={'home'}
             className="relative w-full py-12 md:py-20 px-6 md:px-12 flex flex-col items-center justify-center overflow-hidden bg-background"
         >
+            {/* Background Elements */}
+            <div
+                ref={backgroundRef}
+                className="absolute inset-[-45px] z-0 transition-transform duration-500 ease-out"
+                style={{
+                    willChange: 'transform',
+                    backgroundImage: `url('bg.png')`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    opacity: 0.7,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                }}
+            ></div>
+
             <div className="absolute inset-0 cosmic-grid opacity-30"></div>
 
             {/* Gradient glow effect */}
